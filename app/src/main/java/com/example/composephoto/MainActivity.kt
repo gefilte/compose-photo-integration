@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.example.composephoto.camera.CameraPreview
 import com.example.composephoto.ui.theme.ComposePhotoIntegrationTheme
 import com.example.composephoto.util.Permission
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
@@ -63,6 +64,6 @@ fun MainContent(modifier: Modifier = Modifier) {
             }
         }
     ) {
-        Text("It worked!")
+        CameraPreview(modifier)
     }
 }
