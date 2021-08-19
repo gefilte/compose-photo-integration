@@ -19,11 +19,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.example.composephoto.camera.CameraPreview
+import com.example.composephoto.camera.CameraCapture
 import com.example.composephoto.ui.theme.ComposePhotoIntegrationTheme
 import com.example.composephoto.util.Permission
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalCoroutinesApi
 @ExperimentalPermissionsApi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +41,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@ExperimentalCoroutinesApi
 @ExperimentalPermissionsApi
 @Composable
 fun MainContent(modifier: Modifier = Modifier) {
@@ -64,6 +67,6 @@ fun MainContent(modifier: Modifier = Modifier) {
             }
         }
     ) {
-        CameraPreview(modifier)
+        CameraCapture(modifier)
     }
 }
