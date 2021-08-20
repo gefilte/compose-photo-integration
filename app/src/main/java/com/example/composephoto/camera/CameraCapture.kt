@@ -16,7 +16,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -85,9 +85,9 @@ fun CameraCapture(
                         previewUseCase = it
                     }
                 )
-                Button(
+                CapturePictureButton(
                     modifier = Modifier
-                        .wrapContentSize()
+                        .size(100.dp)
                         .padding(16.dp)
                         .align(Alignment.BottomCenter),
                     onClick = {
@@ -97,9 +97,7 @@ fun CameraCapture(
                             }
                         }
                     }
-                ) {
-                    Text("Click!")
-                }
+                )
             }
             LaunchedEffect(previewUseCase) {
                 val cameraProvider = context.getCameraProvider()
